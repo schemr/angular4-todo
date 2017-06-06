@@ -11,15 +11,9 @@ import { TodoDataService } from './todo-data.service';
 })
 export class AppComponent {
 
-  newTodo: Todo = new Todo();
   todos: Todo[] = [];
   
   constructor(private todoDataService: TodoDataService){}
-
-  addTodo(){
-    this.todoDataService.addTodo(this.newTodo);
-    this.newTodo = new Todo();
-  }
 
   toggleTodoComplete(todo){
     this.todoDataService.toggleTodoComplete(todo)
